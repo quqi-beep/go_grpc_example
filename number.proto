@@ -1,0 +1,16 @@
+syntax="proto3";
+option go_package = ".;number";
+package number;
+
+service OprationNumberService{
+    rpc AddNumberAsync(AddNumberRequest) returns(AddNumberResponse);
+}
+
+message AddNumberRequest{
+    int32 First=1;
+    int32 Second=2;
+}
+
+message AddNumberResponse{
+    int32 Num=1;
+}
