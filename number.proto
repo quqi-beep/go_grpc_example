@@ -4,6 +4,7 @@ package number;
 
 service OprationNumberService{
     rpc AddNumberAsync(AddNumberRequest) returns(AddNumberResponse);
+    rpc TestStreamSendRequestAsync(stream StreamRequest) returns(stream StreamResponse);
 }
 
 message AddNumberRequest{
@@ -13,4 +14,12 @@ message AddNumberRequest{
 
 message AddNumberResponse{
     int32 Num=1;
+}
+
+message StreamRequest{
+	string Question=1;
+}
+
+message StreamResponse{
+	string Answer =1;
 }
